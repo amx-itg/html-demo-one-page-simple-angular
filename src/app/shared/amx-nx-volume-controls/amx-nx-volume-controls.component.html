@@ -1,0 +1,36 @@
+<div class="d-flex justify-content-center">
+    <button *ngIf="slideConfig.slides.length > 1" class="btn btn-secondary me-3" type="button"
+        data-bs-target="#volumeCarousel" data-bs-slide="prev">
+        <i class="bi bi-chevron-left"></i>
+    </button>
+
+    <div id="volumeCarousel" class="carousel slide">
+        <div class="slider-container">
+            <div class="carousel-inner">
+                <ng-container *ngFor="let volumes of slideConfig.slides; let index = index">
+                    <div class="carousel-item" [ngClass]="{ 'active': index === 0 }">
+                        <div class="row g-3 justify-content-center">
+                            <ng-container *ngFor="let volume of volumes; let volIndex = index">
+                                <div class="col d-flex flex-column justify-content-center">
+                                    <div>
+                                        <amx-nx-lavel [configuration]="volume.range"></amx-nx-lavel>
+                                    </div>
+                                    <div>
+                                        <amx-nx-icon [configuration]="volume.icon"></amx-nx-icon>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <amx-nx-mute-buttons [configuration]="volume.btn" [port]="slideConfig.port"></amx-nx-mute-buttons>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+    <button *ngIf="slideConfig.slides.length > 1" class=" btn btn-secondary ms-3" type="button"
+        data-bs-target="#volumeCarousel" data-bs-slide="next">
+        <i class="bi bi-chevron-right"></i>
+    </button>
+</div>

@@ -1,0 +1,131 @@
+@import './variables.scss';
+$theme-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'info': $info,
+  'dark': $dark,
+  'danger': $danger,
+  'warning': $warning,
+  'light': $light,
+  'success': $success,
+);
+
+@import 'bootstrap/scss/bootstrap';
+@import 'card.scss';
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.bg-primary {
+  background-color: $primary !important;
+}
+
+.app-logScroll {
+  max-height: calc(100vh - 230px);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.dark-theme {
+  color: $white;
+}
+
+.light-theme {
+  color: $dark;
+}
+
+.app-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 100px);
+  overflow-y: auto;
+  padding: 20px 0;
+}
+
+
+.app-col {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+
+  .btn {
+    width: 120px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    justify-content: center;
+  }
+}
+
+.app-bottom-content {
+  margin-top: 10px;
+
+  .app-icon {
+    color: $dark;
+    font-size: 20px;
+    margin-bottom: 10px;
+
+  }
+}
+
+.slider-container {
+  min-width: 475px;
+  min-height: 220px;
+}
+
+
+.app-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 100px);
+  overflow-y: auto;
+  padding: 20px 0;
+}
+
+
+.btn-square {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  min-width: 100px;
+  justify-content: center;
+  height:100%;
+  span{
+    word-break: break-all;
+  }
+  &.active {
+    transform: scaleX(1.05);
+    transition: 0.5s all ease-in-out;
+  }
+}
+
+.heading-xs {
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+}

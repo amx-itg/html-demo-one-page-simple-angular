@@ -1,0 +1,25 @@
+<div class="d-flex justify-content-center">
+  <button *ngIf="slideConfig.slides.length > 1" class="btn btn-secondary me-3" type="button"
+    data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <i class="bi bi-chevron-left"></i>
+  </button>
+  <div class="slider-container">
+    <div id="carouselExampleControls" class="carousel slide">
+      <div class="carousel-inner">
+        <ng-container *ngFor="let buttons of slideConfig.slides; let index = index">
+          <div class="carousel-item" [ngClass]="{ 'active': index === 0 }">
+            <div class="row g-3 justify-content-center">
+              <div class="col-3  d-flex justify-content-center" *ngFor="let btn of buttons; let btnIndex = index">
+                <amx-nx-buttons [configuration]="btn" [port]="slideConfig.port"></amx-nx-buttons>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <button *ngIf="slideConfig.slides.length > 1" class=" btn btn-secondary ms-3" type="button"
+    data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <i class="bi bi-chevron-right"></i>
+  </button>
+</div>

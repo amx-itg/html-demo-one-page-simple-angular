@@ -1,0 +1,21 @@
+
+ <button
+ [id]="'btn_' + (btn.port || '') + '_' + (btn.channel || '')"
+ type="button"
+ [ngClass]="'btn btn-square ' + (btn.style ? btn.style : 'btn-primary') + ' ' +
+   (btn.active ? 'active' : '') + ' ' + (btn.disabled ? 'disabled' : '') + ' ' +
+   (btn.hidden ? 'visually-hidden' : '')"
+ (touchstart)="setButton('push')"
+ (mousedown)="setButton('push')"
+ (touchcancel)="setButton('release')"
+ (touchend)="setButton('release')"
+ (mouseup)="setButton('release')"
+ (contextmenu)="$event.preventDefault()"
+>
+ <div class="d-flex flex-column">
+   <ng-container *ngIf="btn.icon">
+     <i [ngClass]="btn.icon + ' ' + (btn.textStyle ? btn.textStyle : 'text-light') + ' fs-2'"></i>
+   </ng-container>
+   <span [ngClass]="btn.textStyle ? btn.textStyle : 'text-light'" [innerHTML]="btn.text"></span>
+ </div>
+</button>

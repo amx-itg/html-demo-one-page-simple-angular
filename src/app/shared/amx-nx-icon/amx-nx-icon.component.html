@@ -1,0 +1,5 @@
+<div *ngIf="iconConfig" class="d-flex justify-content-center align-items-center flex-column">
+    <div *ngIf="iconConfig.labelVisible" class="heading-xs">{{ iconConfig.text }}</div>
+    <i *ngIf="iconConfig.icon" [ngClass]="'bi ' + iconConfig.icon + ' fs-1'"></i>
+  </div>
+  

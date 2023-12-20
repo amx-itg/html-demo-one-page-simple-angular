@@ -1,0 +1,18 @@
+<amx-nx-scroll-bar>
+    <ng-container *ngFor="let message of logMessages; let index = index">
+      <div class="py-1 me-0 ms-0  row app-log-list">
+        <div class="col-3 d-flex align-items-center col">
+          <ng-container *ngIf="message.icon">
+            <i [ngClass]="message.icon"></i>
+          </ng-container>
+          <span class="small ms-1">{{ message.time }}</span>
+        </div>
+        <div class="col-6 d-flex align-items-center col">
+          <span class="small">{{ message.msgType }} {{ message.path }}</span>
+        </div>
+        <div class="col-3 d-flex align-items-center ms-auto col">
+          <span class="small">{{ message.value }}</span>
+        </div>
+      </div>
+    </ng-container>
+  </amx-nx-scroll-bar>
